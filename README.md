@@ -2,13 +2,12 @@
 
 **JSX (JavaScript XML)** is a syntax extension for JavaScript that allows writing HTML-like code inside JavaScript files.  
 
-- Writing UI with plain JavaScript is complex because it requires `React.createElement`.  
 - JSX makes the code cleaner and easier to understand, showing clearly what the UI will look like.  
 
 **Example:**
 ```javascript
 const element = <h1>Hello, React!</h1>;
-
+```
 
 ## 2. What is the difference between State and Props?
 
@@ -43,6 +42,7 @@ function Counter() {
     </div>
   );
 }
+```
 
 ## 4. How can you share state between components?
 
