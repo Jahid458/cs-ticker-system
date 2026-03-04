@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Unable to Login to Account",
+    "description": "Customer reports that they cannot log in even after entering correct credentials.",
+    "customer": "Rahim Ahmed",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2024/12/21"
+  },
+  {
+    "id": 2,
+    "title": "Payment Not Reflected",
+    "description": "Customer completed payment but the transaction is not showing in order history.",
+    "customer": "Nusrat Jahan",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2024/12/22"
+  },
+  {
+    "id": 3,
+    "title": "Profile Update Not Saving",
+    "description": "Changes made to the profile information are not being saved properly.",
+    "customer": "Tanvir Hasan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2024/12/23"
+  },
+  {
+    "id": 4,
+    "title": "App Freezes on Dashboard",
+    "description": "Customer reports that the application freezes after opening the dashboard.",
+    "customer": "Mim Akter",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2024/12/24"
+  },
+  {
+    "id": 5,
+    "title": "Invoice Download Error",
+    "description": "Customer cannot download invoice due to server error message.",
+    "customer": "Sabbir Hossain",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "2024/12/25"
+  },
+  {
+    "id": 6,
+    "title": "Email Notification Not Received",
+    "description": "Customer is not receiving email notifications for important updates.",
+    "customer": "Jannat Islam",
+    "priority": "Low",
+    "status": "Pending",
+    "createdAt": "2024/12/26"
+  },
+  {
+    "id": 7,
+    "title": "Subscription Renewal Issue",
+    "description": "Customer's subscription was not renewed automatically despite active card details.",
+    "customer": "Arif Chowdhury",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2024/12/27"
+  },
+  {
+    "id": 8,
+    "title": "File Upload Failed",
+    "description": "Customer receives an error when attempting to upload documents.",
+    "customer": "Farzana Rahman",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "2024/12/28"
+  },
+  {
+    "id": 9,
+    "title": "Two-Factor Code Not Working",
+    "description": "Customer enters correct verification code but system rejects it.",
+    "customer": "Imran Kabir",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2024/12/29"
+  },
+  {
+    "id": 10,
+    "title": "Slow Page Loading",
+    "description": "Customer experiences slow loading times across multiple pages.",
+    "customer": "Shila Roy",
+    "priority": "Low",
+    "status": "In Progress",
+    "createdAt": "2024/12/30"
+  }
+]
