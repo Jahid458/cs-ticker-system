@@ -86,10 +86,10 @@ const Tickets = ({ ticketPromise }) => {
 
       <div className="lg:w-1/3 space-y-10 ">
 
-      <div className="">
+      <div>
         <h2 className="text-2xl font-bold mb-6">Task Status</h2>
         {inProgress.map((task) => (
-              <div key={task.id} className="bg-white p-5 rounded-lg border-l-4 border-indigo-500 mb-4">
+              <div key={task.id} className="bg-white p-5 rounded-lg  mb-4">
                 <p className="font-semibold text-gray-500 mb-3">{task.title}</p>
                 <button
                   onClick={(e) => { e.stopPropagation();  }}
