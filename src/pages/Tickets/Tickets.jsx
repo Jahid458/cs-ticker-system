@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const Tickets = ({ ticketPromise }) => {
   const ticketLists = use(ticketPromise);
@@ -10,33 +10,35 @@ const Tickets = ({ ticketPromise }) => {
   const [inProgress, setInProgress] = useState([]);
   const [resolvedTasks, setResolvedTasks] = useState([]);
 
-
-
   const addToProgress = (ticket) => {
-    const isExits = inProgress.find(item => item.id  === ticket.id);
-    if(!isExits){
-        setInProgress([...inProgress,ticket]);
-        toast.success("Ticket added to In-Progress!"); 
-    }else{
-        toast.warning("Ticket already in progress!");
+    const isExits = inProgress.find((item) => item.id === ticket.id);
+    if (!isExits) {
+      setInProgress([...inProgress, ticket]);
+      toast.success("Ticket added to In-Progress!");
+    } else {
+      toast.warning("Ticket already in progress!");
     }
-  }
+  };
 
   const handleComplete = (task) => {
-    setInProgress(inProgress.filter( item => item.id !== task.id));
+    setInProgress(inProgress.filter((item) => item.id !== task.id));
 
-  }
+    setResolvedTasks([...resolvedTasks,task]);
+    setTickets(tickets.filter(item => item.id !== task.id))
+
+    toast.success('Ticket Resolved Sucessfully!')
+  };
 
   return (
     <div className="max-w-7xl mx-auto p-6 px-5 lg:px-10 flex flex-col lg:flex-row gap-10">
-         <ToastContainer position="top-right" />
+      <ToastContainer position="top-right" />
       <div className="lg:w-2/3">
         <h2 className="text-2xl font-bold mb-6">Customer Tickets</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {tickets.map((ticket) => (
             <div
-            onClick={() => addToProgress(ticket)}
+              onClick={() => addToProgress(ticket)}
               key={ticket.id}
               className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-all cursor-pointer"
             >
@@ -85,23 +87,35 @@ const Tickets = ({ ticketPromise }) => {
       </div>
 
       <div className="lg:w-1/3 space-y-10 ">
+        <div>
+          <h2 className="text-2xl font-bold mb-6">Task Status</h2>
+          {inProgress.map((task) => (
+            <div key={task.id} className="bg-white p-5 rounded-lg  mb-4">
+              <p className="font-semibold text-gray-500 mb-3">{task.title}</p>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleComplete(task)
+                }}
+                className="btn bg-[#02A53B] btn-sm w-full text-white"
+              >
+                Complete
+              </button>
+            </div>
+          ))}
+        </div>
 
-      <div>
-        <h2 className="text-2xl font-bold mb-6">Task Status</h2>
-        {inProgress.map((task) => (
-              <div key={task.id} className="bg-white p-5 rounded-lg  mb-4">
-                <p className="font-semibold text-gray-500 mb-3">{task.title}</p>
-                <button
-                  onClick={(e) => { e.stopPropagation();  }}
-                  className="btn bg-[#02A53B] btn-sm w-full text-white"
-                >Complete</button>
-              </div>
-            ))}
+        <div>
+          <h2 className="text-xl text-gray-600 font-bold mb-4">
+            Resolved Tasks
+          </h2>
+          {resolvedTasks.map((task) => (
+            <div key={task.id} className="bg-[#e0e7ff] p-5 rounded-lg  mb-4">
+              <h1 className="text-black">{task.title}</h1>
+            </div>
+          ))}
+        </div>
       </div>
-          
-      </div>
-
-
     </div>
   );
 };
